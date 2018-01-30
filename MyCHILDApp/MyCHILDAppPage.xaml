@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:MyCHILDApp" x:Class="MyCHILDApp.MyCHILDAppPage"
+            xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+
+    <!--<StackLayout Orientation="Vertical">
+        <StackLayout Padding="10,60,0,0">
+            <Label Text="Add a ToDo item" TextColor="Green">
+            </Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+            <Entry x:Name="txtTodoItem" HorizontalOptions="Start" VerticalOptions="StartAndExpand" HeightRequest="30" WidthRequest="200">
+            </Entry>
+            <DatePicker x:Name="dpDueDate" HorizontalOptions="CenterAndExpand" HeightRequest="30" VerticalOptions="StartAndExpand">
+            </DatePicker>
+            <Button HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" HeightRequest="30" Text="Add" Clicked="AddButton_Clicked">
+            </Button>
+        </StackLayout>
+        <StackLayout Orientation="Vertical" Padding="10,5,10,0">
+            <Label Text="Pending Items" TextColor="Red">
+            </Label>
+            <ListView x:Name="vitalFormList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDone" CommandParameter="{Binding .}" Text="Done" />
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout Padding="10,10" Orientation="Horizontal">
+                                <Label Text="{ Binding Description }" HorizontalOptions="StartAndExpand">
+                                </Label>
+                                <Label Text="Done" TextColor="Green" HorizontalOptions="Center" IsVisible="{Binding isDone}">
+                                </Label>
+                                <Label Text="{ Binding DueDate }" HorizontalOptions="End">
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout> -->
+
+    <ScrollView>
+    <StackLayout x:Name="StackLayoutTop" Orientation="Vertical" Padding="16,20,16,20" 
+            Spacing="10" BackgroundColor="Yellow" Margin="10, 80, 10, 20" >
+            <StackLayout>         
+                <Label  Text="Answer the following Questions:" 
+                   HorizontalOptions="Center" />
+            </StackLayout>
+            
+            <Label  Text="1) Temperature" 
+                    HorizontalOptions="Center" />
+            <Entry x:Name="Temp" Text="" />
+            
+            <Label  Text="2) Heart Rate" 
+                    HorizontalOptions="Center" />
+            <Entry x:Name="HeartRate" Text="" />
+
+            <Label  Text="3) Respiratory Rate" 
+                    HorizontalOptions="Center" />
+            <Entry x:Name="RespiratoryRate" Text="" />
+
+            <Label  Text="4) Oxygen Staturation" 
+                    HorizontalOptions="Center" />
+                <Slider x:Name="OxySlider" 
+                        HorizontalOptions="FillAndExpand" 
+                        Minimum='0' Maximum='10'  
+                        ValueChanged="OnOxySliderValueChanged"/>
+            <Entry x:Name="OxygenStaturation" Text="" />
+        
+            <Label  Text="5) Pain Score" HorizontalOptions="Center" />           
+            <Slider x:Name="PainSlider" 
+                        HorizontalOptions="FillAndExpand" 
+                        Minimum='0' Maximum='10'  
+                        ValueChanged="OnSliderValueChanged"/>
+            <Entry x:Name="PainScore"></Entry>
+
+             <Label  Text="6) Feeding Status" 
+                    HorizontalOptions="Center" />
+<!--            <Entry x:Name="FeedingStatus" Text="" />-->
+            <Picker x:Name="FeedingStatus" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>25% of normal feeding</x:String> 
+                    <x:String>50% of normal feeding</x:String>
+                    <x:String>75% of normal feeding</x:String>
+                    <x:String>100% of normal feeding</x:String>
+                </Picker.Items>
+            </Picker> 
+            <!--<Grid>
+                <controls:BindableRadioGroup x:Name="ansPicker"
+                                             Grid.Row="1"
+                                             FontName="AmericanTypewriter"
+                                             SelectedIndex="{Binding ItemSelected}"
+                                             TextColor="White"
+                                             VerticalOptions="Start" />
+            </Grid>-->
+
+            <Label  Text="7) Mental Status" 
+                    HorizontalOptions="Center" />
+<!--            <Entry x:Name="MentalStatus" Text="" />-->
+
+            <Picker x:Name="MentalStatus" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Playing/Appropriate</x:String> 
+                    <x:String>Sleepy</x:String>
+                    <x:String>Irritable</x:String>
+                    <x:String>Lethargic/Unresponsive</x:String>
+                </Picker.Items>
+            </Picker> 
+
+            <!--<Picker x:Name="IndustryTypePicker1" SelectedIndex="{Binding Industry}" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>1</x:String> 
+                    <x:String>2</x:String>
+                </Picker.Items>
+            </Picker> -->
+
+            <Label  Text="8) Seizure" HorizontalOptions="Center" />          
+                <Slider x:Name="SeizureSlider" 
+                        HorizontalOptions="FillAndExpand" 
+                        Minimum='0' Maximum='10'  
+                        ValueChanged="OnSeizureSliderValueChanged"/>
+            <Entry x:Name="Seizure"/>
+
+            <Label  FontAttributes="Bold" Text="9) Caregiver Worry" 
+                    HorizontalOptions="Center" />
+            <Button Text="Select All That Apply" HorizontalOptions="FillAndExpand"
+                    Clicked="OnMultiselectClick" />
+            
+            <Entry x:Name="CaregiverWorry" Text="" IsVisible="false">
+                <!--<Entry.Triggers>
+                    <EventTrigger Event="Focused">
+                        <trigger:BackgroundColorTrigger />
+                    </EventTrigger>
+                </Entry.Triggers>-->
+            </Entry>
+
+<!--            <Label x:Name="results" />-->
+
+           <!--<controls:CheckBox DefaultText="Default text"
+                           FontName="AmericanTypewriter"
+                           FontSize="25"
+                           HorizontalOptions="FillAndExpand"
+                           TextColor="Green" />-->
+
+         
+            <Button Text = "Submit"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="Submit_OnClicked" >
+            </Button>
+        </StackLayout>
+        </ScrollView>
+</ContentPage>

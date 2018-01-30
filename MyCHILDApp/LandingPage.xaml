@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MyCHILDApp.LandingPage" >
+   
+	<ContentPage.Content>
+<!--        Margin - from the original screen, padding - inside the margin-->
+<!--        <StackLayout>-->
+<!--            <StackLayout BackgroundColor="#B4B8FE" Margin="0,10,0,0">
+                <Label Text="MyCHILD" FontSize="30" HorizontalOptions="CenterAndExpand"/>
+                <BoxView  BackgroundColor="#B4B8FE" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />                                    
+            </StackLayout>-->
+
+            <StackLayout BackgroundColor="#E6E7FE" Padding="10,0,10,20">
+<!--                <Image Source="logo.png" HorizontalOptions="FillAndExpand" HeightRequest="100"/>   -->
+                    
+<!--                <Frame BackgroundColor="#E6E7FE" HeightRequest="230">-->
+                    <StackLayout VerticalOptions="StartAndExpand" Padding="5,5,5,5">                   
+                        <Label Text="Login" Font="Bold,25"/>
+                        <BoxView  BackgroundColor="Transparent" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />                     
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Username" />
+                            <Entry x:Name="usernameEntry" Placeholder="username" />
+                        </StackLayout>
+                        
+                        <Label Text="Password" />
+                        <Entry x:Name="passwordEntry" IsPassword="true" />
+                        <Button Text="Login" BorderColor="Black" BorderWidth="2" 
+                                BorderRadius="10" TextColor="Black" 
+                                Clicked="OnLoginButtonClicked"/>
+                        <Label x:Name="messageLabel"/>
+                        
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Button Text="forget your username?"/>
+                            <Button Text="forget your password?"/>
+                        </StackLayout>
+                               
+                    </StackLayout>
+<!--                </Frame>-->
+                
+                <StackLayout>
+                    <Label Text="Live your life to the fullest!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Font="Bold, 28" />
+                    <Label Text="Take Control of your symptoms through this amazing tool. With this you can monitor your symptoms and improve them with the help of your provider." HorizontalOptions="Center" VerticalOptions="Center" Font="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+<!--        </StackLayout>-->
+	</ContentPage.Content>
+    
+</ContentPage>

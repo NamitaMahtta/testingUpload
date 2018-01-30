@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:MyCHILDApp" x:Class="MyCHILDApp.MainPage"  BackgroundColor="Fuchsia"  >
+
+<!--    <TabbedPage.Children>-->
+         <local:LandingPage  Title="Main Page" BackgroundColor="#E6E7FE" Icon="schedule.png"/>
+        
+        <NavigationPage Title="About CMC" Icon="schedule.png">
+            <x:Arguments>
+                <local:AboutCMCPage Title="About Complex Medical Conditions"/>
+            </x:Arguments>
+        </NavigationPage>
+    
+<!--        <local:AboutPage Title="About MyCHILD" Icon="schedule.png"/>-->
+
+<!--        <ContentPage Title="Content Title" Icon="schedule.png">
+            <StackLayout BackgroundColor="#E6E7FE" Padding="10,10,10,20">
+                <StackLayout>
+                    <Label Text="MyCHILD" FontSize="30" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            
+                <StackLayout VerticalOptions="StartAndExpand" Padding="20,20,20,20">                  
+                    <Label Text="Login" FontSize="25"/>
+                                <Label Text="Username" />
+                                <Entry x:Name="usernameEntry" Placeholder="username" />
+                                <Label Text="Password" />
+                                <Entry x:Name="passwordEntry" IsPassword="true" />
+                                <Button Text="Login" BorderColor="Black" BorderWidth="2" BorderRadius="10" TextColor="Black"/>
+                                <Label x:Name="messageLabel"/>
+                                <Button Text="forget your username?"/>
+                                <Button Text="forget your password?"/>
+                </StackLayout>  
+            </StackLayout>
+        </ContentPage>-->
+<!--    </TabbedPage.Children>-->
+  
+</TabbedPage>
